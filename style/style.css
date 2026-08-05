@@ -20,7 +20,22 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+::-webkit-scrollbar {
+    width: 3.5px;
+}
 
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FACE0F;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #facf0fcb;
+}
 /* NAVBAR STYLING */
 nav {
     width: 100%;
