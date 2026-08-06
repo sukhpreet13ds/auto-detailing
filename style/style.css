@@ -21,6 +21,7 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
 ::-webkit-scrollbar {
     width: 3.5px;
 }
@@ -38,9 +39,10 @@ body {
     background: #facf0fcb;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 /* NAVBAR STYLING */
 nav {
     width: 100%;
@@ -797,13 +799,16 @@ nav {
     .highlight-text {
         font-size: 32px;
     }
-    .details-strength-section{
+
+    .details-strength-section {
         padding: 90px 80px !important;
     }
-    .reviews-stats-section{
+
+    .reviews-stats-section {
         padding: 100px 70px 120px 70px !important;
     }
-    .how-it-works-section{
+
+    .how-it-works-section {
         padding: 90px 70px 140px 70px !important;
     }
 }
@@ -850,7 +855,7 @@ nav {
     .city-list span {
         font-size: 15px;
     }
-    
+
 }
 
 
@@ -883,9 +888,11 @@ nav {
     .main-title {
         font-size: 70px;
     }
-.highlight-text{
-    font-size: 40px !important;
-}
+
+    .highlight-text {
+        font-size: 40px !important;
+    }
+
     .starting-price {
         font-size: 20px;
     }
@@ -1648,7 +1655,7 @@ nav {
     letter-spacing: -0.5px;
 }
 
-/* Center Customer Portrait Image (review-persons.png) */
+/* Center Customer Portrait Image (review-persons.jpg) */
 .customer-portrait-box {
     width: 260px;
     height: 340px;
