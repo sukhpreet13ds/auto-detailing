@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -35,6 +36,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #facf0fcb;
+}
+
+a{
+    text-decoration: none;
 }
 /* NAVBAR STYLING */
 nav {
@@ -530,12 +535,12 @@ nav {
 .step-line {
     width: 110px;
     height: 2px;
-    background-color: #a4c6f4;
+    background-color: #000000;
     display: inline-block;
 }
 
 .wash-step.active .step-line {
-    background-color: #79a6ed;
+    background-color: var(--primary);
 }
 
 .step-num {
@@ -566,7 +571,7 @@ nav {
 
 /* Left Blue Box */
 .car-wash-left-box {
-    background-color: #2d55c7;
+    background-color: #000000;
     border-radius: 28px;
     padding: 60px 65px 55px 65px;
     color: #ffffff;
@@ -692,6 +697,7 @@ nav {
     display: flex;
     border-radius: 28px;
     overflow: hidden;
+    position: relative;
 }
 
 .car-wash-right-img img {
@@ -700,6 +706,55 @@ nav {
     object-fit: cover;
     display: block;
     border-radius: 28px;
+}
+
+.car-wash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 35px;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+}
+
+.car-svg-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.car-draw-svg {
+    width: 250px;
+    height: auto;
+    max-width: 80%;
+    display: block;
+}
+
+.car-protection-counter {
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -1px;
+    font-family: var(--font-ibm);
+}
+
+.car-protection-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.2px;
+    font-family: var(--font-ibm);
 }
 
 
@@ -1088,7 +1143,7 @@ nav {
 }
 
 .details-header .section-subtext {
-    font-size: 16px;
+    font-size: 20px;
     color: #555555;
     line-height: 1.6;
     font-weight: 500;
@@ -1151,7 +1206,7 @@ nav {
 .icon-box {
     width: 90px;
     height: 90px;
-    background-color: #eafaf4;
+    background-color: #fafaea;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -1214,14 +1269,14 @@ nav {
 .green-rings-bg .outer-ring {
     width: 340px;
     height: 340px;
-    background-color: rgba(113, 243, 186, 0.45);
+    background-color: rgba(241, 243, 113, 0.45);
 }
 
 /* Inner thick ring */
 .green-rings-bg .inner-ring {
     width: 250px;
     height: 250px;
-    background-color: #71f3ba;
+    background-color: #f3ea71;
 }
 
 /* Seamless Rotating Top-View Car Image */
@@ -1353,14 +1408,14 @@ nav {
 .ba-line {
     width: 24px;
     height: 3px;
-    background-color: #1d3db7;
+    background-color: var(--primary);
     display: inline-block;
 }
 
 .ba-sub-text {
     font-size: 16px;
     font-weight: 800;
-    color: #1d3db7;
+    color: var(--primary);
     letter-spacing: 1px;
 }
 
@@ -1368,13 +1423,13 @@ nav {
     font-size: 50px;
     font-weight: 800;
     line-height: 1.15;
-    color: #1d3db7;
+    color: #000000;
     margin-bottom: 45px;
     letter-spacing: -0.5px;
 }
 
 .btn-our-works {
-    background-color: #1d3db7;
+    background-color: #000000;
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
@@ -1382,11 +1437,11 @@ nav {
     border-radius: 6px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(29, 61, 183, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-our-works:hover {
-    background-color: #152d8a;
+    background-color: #121213;
     transform: translateY(-2px);
 }
 
@@ -1564,7 +1619,7 @@ nav {
 .stat-number {
     font-size: 54px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     line-height: 1;
 }
 
@@ -1572,12 +1627,12 @@ nav {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #a1ddff 0%, #d8ebff 100%);
-    border: 2px solid #ffffff;
+    background: linear-gradient(135deg, #fff9a1 0%, #d8ebff 100%);
+    border: 2px solid #00000081;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1e3bb3;
+    color: #000000;
     font-size: 18px;
     font-weight: 800;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -1587,7 +1642,7 @@ nav {
     width: 100%;
     font-size: 38px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     line-height: 1.1;
     margin-top: 6px;
     letter-spacing: -0.5px;
@@ -1626,8 +1681,8 @@ nav {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background-color: #3b62d8;
-    color: #85b0ff;
+    background-color: var(--primary);
+    color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1637,7 +1692,7 @@ nav {
 
 .quote-text {
     font-size: 15px;
-    color: #3a53a4;
+    color: #000000;
     line-height: 1.6;
     font-weight: 600;
     margin-bottom: 30px;
@@ -1648,7 +1703,7 @@ nav {
     align-self: flex-end;
     font-size: 17px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
 }
 
 /* Bottom 5000 Stats Banner */
@@ -1691,7 +1746,7 @@ nav {
 .banner-heading {
     font-size: 54px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     line-height: 1.15;
     margin-bottom: 12px;
     letter-spacing: -0.5px;
@@ -1704,7 +1759,7 @@ nav {
 .banner-subtext {
     font-size: 14px;
     font-weight: 700;
-    color: #2b4cad;
+    color: #000000;
     margin-bottom: 28px;
     opacity: 0.9;
 }
@@ -1805,7 +1860,7 @@ nav {
 .hiw-main-title {
     font-size: 54px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     margin-bottom: 70px;
     letter-spacing: -0.5px;
 }
@@ -1905,7 +1960,7 @@ nav {
 .cta-question {
     font-size: 22px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     margin-bottom: 6px;
     max-width: 280px;
 }
@@ -1939,21 +1994,21 @@ nav {
 .info-label {
     font-size: 14px;
     font-weight: 600;
-    color: #7991dd;
+    color: #000000;
     margin-bottom: 6px;
 }
 
 .info-value.phone-val {
     font-size: 22px;
     font-weight: 800;
-    color: #1e3bb3;
+    color: #000000;
     text-decoration: none;
 }
 
 .address-text {
     font-size: 16px;
     font-weight: 600;
-    color: #5572cb;
+    color: #000000;
     line-height: 1.5;
 }
 
@@ -1964,7 +2019,7 @@ nav {
 }
 
 .socials-col a {
-    color: #1e3bb3;
+    color: var(--primary);
     font-size: 20px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -1992,7 +2047,7 @@ nav {
 .copyright-text {
     font-size: 14px;
     font-weight: 600;
-    color: #5572cb;
+    color: #000000;
 }
 
 .back-to-top-btn {
@@ -2135,8 +2190,13 @@ nav {
         height: 2px;
     }
 
+    .car-wash-right-img {
+        min-height: 380px;
+        width: 100%;
+    }
+
     .car-wash-right-img img {
-        display: none;
+        display: block;
     }
 
     .details-strength-section {

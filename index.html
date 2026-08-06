@@ -72,8 +72,8 @@
         <svg class="hero-bg-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
             <defs>
                 <linearGradient id="outlineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#A1DDFF" stop-opacity="0.5" />
-                    <stop offset="100%" stop-color="#f3f7fc" stop-opacity="0.5" />
+                    <stop offset="0%" stop-color="#facf0f17" stop-opacity="0.5" />
+                    <stop offset="100%" stop-color="#f3f7fcb6" stop-opacity="0.5" />
                 </linearGradient>
             </defs>
             <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="hero-bg-svg-text">AUTO CARE</text>
@@ -202,19 +202,51 @@
 
                 <div class="box-action">
                     <a href="#" class="btn-about-us">ABOUT US</a>
-                    <div class="feedback-link">
+                    <a href="#review" class="feedback-link">
                         <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
                         <div class="feedback-text">
                             Check feedback<br>
                             from satisfied customers
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 
             <!-- Right Image Box -->
             <div class="car-wash-right-img">
                 <img src="assets/car-100.png" alt="100% Car Protection">
+                <div class="car-wash-overlay">
+                    <div class="car-svg-wrapper">
+                        <svg class="car-draw-svg" width="325" height="91" viewBox="0 0 325 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_4022_121)">
+                            <g clip-path="url(#clip1_4022_121)">
+                            <g clip-path="url(#clip2_4022_121)">
+                            <path class="car-path" d="M277.296 80.3819C283.97 78.4729 288.631 72.286 288.631 65.3367V41.5944C288.631 35.7205 284.241 30.7413 278.419 30.0132L263.732 28.1751C257.433 27.3865 251.361 25.5459 245.683 22.7034L226.838 13.2692C218.645 9.16795 209.473 7 200.314 7H164.935C154.393 7 144.12 9.99525 135.225 15.6624C115.548 28.1999 92.5599 33.9658 69.6635 38.4537C61.555 40.0431 53.2784 42.3296 46.2043 45.6189C39.3984 48.7832 35.0005 55.7504 35 63.3677V76.5668C35 80.4067 36.12 83.7249 38.2382 86.1636" stroke="url(#paint0_linear_4022_121)" stroke-width="13.349" stroke-linecap="round"/>
+                            </g>
+                            </g>
+                            </g>
+                            <defs>
+                            <linearGradient id="paint0_linear_4022_121" x1="161.815" y1="7" x2="161.815" y2="86.1636" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FACE0F"/>
+                            <stop offset="0.776042" stop-color="#FACE0F"/>
+                            </linearGradient>
+                            <clipPath id="clip0_4022_121">
+                            <rect width="268" height="91" fill="white" transform="translate(28)"/>
+                            </clipPath>
+                            <clipPath id="clip1_4022_121">
+                            <rect width="268" height="91" fill="white" transform="translate(28)"/>
+                            </clipPath>
+                            <clipPath id="clip2_4022_121">
+                            <rect width="268" height="91" fill="white" transform="translate(28)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="car-protection-counter">
+                        <span class="count-number" id="carProtectionCount">0</span><span class="count-percent">%</span>
+                    </div>
+                    <div class="car-protection-text">Car Protection</div>
+                </div>
             </div>
         </div>
     </section>
@@ -341,7 +373,7 @@
         </div>
     </section>
     <!-- Testimonials & 5000 Stats Section -->
-    <section class="reviews-stats-section">
+    <section id="review" class="reviews-stats-section">
         <!-- Big blurred background balls (ball-bg.png) -->
         <img src="assets/ball-bg.png" alt="Blurred Background Ambient" class="bg-blur-ball ball-left">
         <img src="assets/ball-bg.png" alt="Blurred Background Ambient" class="bg-blur-ball ball-right">

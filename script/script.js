@@ -232,6 +232,73 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSlider(baRangeInput.value);
     }
 
+    // Car Wash 100% Counter & SVG Draw Animation
+    const carRightImg = document.querySelector('.car-wash-right-img');
+    if (carRightImg) {
+        const carPath = carRightImg.querySelector('.car-path');
+        const counterEl = document.getElementById('carProtectionCount');
+        
+        let pathLength = 0;
+        if (carPath) {
+            pathLength = carPath.getTotalLength();
+            carPath.style.strokeDasharray = pathLength;
+            carPath.style.strokeDashoffset = pathLength;
+        }
+
+        let hasAnimated = false;
+
+        function triggerCarWashAnimation() {
+            if (hasAnimated) return;
+            hasAnimated = true;
+
+            // 1. Animate SVG Path Stroke Draw
+            if (carPath) {
+                carPath.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
+                carPath.style.strokeDashoffset = '0';
+            }
+
+            // 2. Animate Counter 0 to 100
+            if (counterEl) {
+                const duration = 2000; // 2 seconds
+                let startTime = null;
+
+                function animateCount(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsed = timestamp - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    
+                    // Smooth cubic ease-out
+                    const easeProgress = 1 - Math.pow(1 - progress, 3);
+                    const currentVal = Math.floor(easeProgress * 100);
+                    
+                    counterEl.textContent = currentVal;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(animateCount);
+                    } else {
+                        counterEl.textContent = '100';
+                    }
+                }
+                requestAnimationFrame(animateCount);
+            }
+        }
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        triggerCarWashAnimation();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(carRightImg);
+        } else {
+            triggerCarWashAnimation();
+        }
+    }
+
     // Back to top button listener
     const backToTopBtn = document.getElementById('backToTopBtn');
     if (backToTopBtn) {
