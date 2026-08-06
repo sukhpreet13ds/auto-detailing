@@ -238,48 +238,76 @@ document.addEventListener('DOMContentLoaded', () => {
         const carPath = carRightImg.querySelector('.car-path');
         const counterEl = document.getElementById('carProtectionCount');
         
-        let pathLength = 0;
+        let pathLength = 500;
         if (carPath) {
-            pathLength = carPath.getTotalLength();
+            pathLength = carPath.getTotalLength() || 500;
             carPath.style.strokeDasharray = pathLength;
             carPath.style.strokeDashoffset = pathLength;
         }
 
-        let hasAnimated = false;
+        let counterAnimated = false;
+        let svgLoopStarted = false;
 
-        function triggerCarWashAnimation() {
-            if (hasAnimated) return;
-            hasAnimated = true;
+        // Counter 1 to 100 runs ONLY ONE TIME
+        function animateCounterOnce() {
+            if (counterAnimated || !counterEl) return;
+            counterAnimated = true;
 
-            // 1. Animate SVG Path Stroke Draw
-            if (carPath) {
-                carPath.style.transition = 'stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1)';
-                carPath.style.strokeDashoffset = '0';
-            }
+            const duration = 2000; // 2 seconds
+            let startTime = null;
 
-            // 2. Animate Counter 0 to 100
-            if (counterEl) {
-                const duration = 2000; // 2 seconds
-                let startTime = null;
+            function animateCount(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Smooth cubic ease-out
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = Math.floor(easeProgress * 100);
+                
+                counterEl.textContent = currentVal;
 
-                function animateCount(timestamp) {
-                    if (!startTime) startTime = timestamp;
-                    const elapsed = timestamp - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    // Smooth cubic ease-out
-                    const easeProgress = 1 - Math.pow(1 - progress, 3);
-                    const currentVal = Math.floor(easeProgress * 100);
-                    
-                    counterEl.textContent = currentVal;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(animateCount);
-                    } else {
-                        counterEl.textContent = '100';
-                    }
+                if (progress < 1) {
+                    requestAnimationFrame(animateCount);
+                } else {
+                    counterEl.textContent = '100';
                 }
-                requestAnimationFrame(animateCount);
+            }
+            requestAnimationFrame(animateCount);
+        }
+
+        // SVG Path Draw animation loops with a 1.5-second pause
+        function runSvgLoop() {
+            if (!carPath) return;
+
+            // 1. Reset stroke dashoffset instantly without transition
+            carPath.style.transition = 'none';
+            carPath.style.strokeDashoffset = pathLength;
+
+            // 2. Force SVG reflow synchronously using getBoundingClientRect()
+            void carPath.getBoundingClientRect();
+
+            // 3. Queue animation start on next frame for reliable cross-browser execution
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    // Animate SVG Path Stroke Draw over 1.8 seconds
+                    carPath.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    carPath.style.strokeDashoffset = '0';
+
+                    // 1.8s draw animation + 1.5s pause = 3.3s total delay before next loop
+                    setTimeout(() => {
+                        runSvgLoop();
+                    }, 3300);
+                });
+            });
+        }
+
+        function triggerCarWashSection() {
+            animateCounterOnce();
+
+            if (!svgLoopStarted) {
+                svgLoopStarted = true;
+                runSvgLoop();
             }
         }
 
@@ -287,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        triggerCarWashAnimation();
+                        triggerCarWashSection();
                         observer.unobserve(entry.target);
                     }
                 });
@@ -295,8 +323,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
             observer.observe(carRightImg);
         } else {
-            triggerCarWashAnimation();
+            triggerCarWashSection();
         }
+    }
+
+    // Testimonial Person & Quote Smooth Auto Rotation
+    const reviewPortraitImg = document.getElementById('reviewPortraitImg');
+    const reviewQuoteText = document.getElementById('reviewQuoteText');
+    const reviewQuoteAuthor = document.getElementById('reviewQuoteAuthor');
+
+    const reviewData = [
+        {
+            image: "assets/review-persons.jpg",
+            quote: "\"I was amazed by the level of detail and care in their service. My car looks brand new, and the convenience of a doorstep wash makes it unbeatable. Highly recommend!\"",
+            author: "Rajesh M."
+        },
+        {
+            image: "assets/review-persons2.png",
+            quote: "\"The foam wash and paint protection exceeded all my expectations! Extremely professional team that values quality and customer satisfaction.\"",
+            author: "Aarav Sharma"
+        },
+        {
+            image: "assets/review-persons3.png",
+            quote: "\"Top-notch detailing service right at my doorstep. Saved me so much time and my car has never looked cleaner. Will definitely book monthly!\"",
+            author: "Balbir Singh"
+        }
+    ];
+
+    if (reviewPortraitImg && reviewQuoteText && reviewQuoteAuthor) {
+        let currentReviewIndex = 0;
+
+        setInterval(() => {
+            // Fade out current items
+            reviewPortraitImg.classList.add('review-fade-out');
+            reviewQuoteText.classList.add('review-fade-out');
+            reviewQuoteAuthor.classList.add('review-fade-out');
+
+            setTimeout(() => {
+                currentReviewIndex = (currentReviewIndex + 1) % reviewData.length;
+                const data = reviewData[currentReviewIndex];
+
+                reviewPortraitImg.src = data.image;
+                reviewQuoteText.textContent = data.quote;
+                reviewQuoteAuthor.textContent = data.author;
+
+                // Fade back in
+                reviewPortraitImg.classList.remove('review-fade-out');
+                reviewQuoteText.classList.remove('review-fade-out');
+                reviewQuoteAuthor.classList.remove('review-fade-out');
+            }, 400);
+        }, 4000);
     }
 
     // Back to top button listener

@@ -377,7 +377,7 @@ nav {
 /* Floating Appointment Card */
 .appointment-card {
     position: absolute;
-    top: -115px;
+    top: -165px;
     right: 120px;
     background: #000000;
     color: #fff;
@@ -1670,6 +1670,12 @@ nav {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.review-fade-out {
+    opacity: 0 !important;
+    transform: translateY(8px) !important;
 }
 
 /* Right Quote Card */
@@ -1704,6 +1710,7 @@ nav {
     font-weight: 600;
     margin-bottom: 30px;
     font-style: italic;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .quote-author {
@@ -1711,6 +1718,7 @@ nav {
     font-size: 17px;
     font-weight: 800;
     color: #000000;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 /* Bottom 5000 Stats Banner */
