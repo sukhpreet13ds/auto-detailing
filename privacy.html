@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Car Wash</title>
-    <!-- FontAwesome 6 CDN for reliable icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Animate.css for motion effects -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
@@ -26,8 +23,8 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html" class="active">ABOUT US</a></li>
                 <li><a href="services-prices.html">SERVICES & PRICING</a></li>
                 <li><a href="our-work.html">WORKS</a></li>
                 <li><a href="contact-us.html">CONTACT</a></li>
@@ -43,8 +40,6 @@
             </button>
         </div>
     </nav>
-
-    <!-- Side Menu Overlay & Panel for Mobile/Tablet -->
     <div class="side-panel-overlay" id="sidePanelOverlay"></div>
     <div class="side-panel" id="sidePanel">
         <div class="side-panel-header">
@@ -56,8 +51,8 @@
             </button>
         </div>
         <ul class="side-panel-links">
-            <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> HOME</a></li>
-            <li><a href="about.html"><i class="fa-solid fa-address-card"></i> ABOUT US</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> HOME</a></li>
+            <li><a href="about.html" class="active"><i class="fa-solid fa-address-card"></i> ABOUT US</a></li>
             <li><a href="services-prices.html"><i class="fa-solid fa-list-check"></i> SERVICES & PRICING</a></li>
             <li><a href="our-work.html"><i class="fa-solid fa-briefcase"></i> WORKS</a></li>
             <li><a href="contact-us.html"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
@@ -67,88 +62,56 @@
         </div>
     </div>
 
-    <section class="auto-hero-section">
-        <!-- Thin gradient outlined background text behind elements -->
-        <svg class="hero-bg-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-            <defs>
-                <linearGradient id="outlineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#facf0f17" stop-opacity="0.5" />
-                    <stop offset="100%" stop-color="#f3f7fcb6" stop-opacity="0.5" />
-                </linearGradient>
-            </defs>
-            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="hero-bg-svg-text">AUTO
-                CARE</text>
-        </svg>
-
-        <div class="hero-container">
-            <div class="hero-content animate__animated animate__fadeInLeft">
-                <div class="sub-heading">
-                    <span class="yellow-line"></span>
-                    <span class="sub-text">The Car Wash</span>
-                </div>
-                <h1 class="main-title">
-                    Premium Door Step
-                    Car & Bike Care<br>
-                    <span class="highlight-wrapper">
-                        <span class="highlight-text" id="animatedHighlightText">GRAPHENE CERAMIC WASH</span>
-                        <span class="highlight-underline" id="animatedHighlightUnderline"></span>
-                    </span>
-                </h1>
-                <p class="starting-price">Services starting at <b>₹599</b></p>
-                <div class="hero-action">
-                    <a href="#" class="btn-book hero-btn">BOOK A SERVICE</a>
-                </div>
-            </div>
-
-            <div class="hero-image-container animate__animated animate__fadeInRight">
-                <!-- Appointment Badge -->
-                <div class="appointment-card animate__animated animate__fadeInDown animate__delay-1s">
-                    <div class="appointment-info">
-                        <span class="title">Call and book an appointment</span>
-                        <span class="phone-number">+91 94243 73556</span>
-                        <span class="timing">Monday - Saturday: 8 am - 7 pm</span>
-                    </div>
-                    <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-                            alt="Customer Support">
-                    </div>
-                </div>
-
-                <!-- Water Drops overlays -->
-                <img src="assets/drops.png" alt="Water Drops Left" class="drops-image drops-left">
-                <img src="assets/drops.png" alt="Water Drops Right" class="drops-image drops-right">
-
-                <!-- Car Image -->
-                <img src="assets/car-wash.png" alt="Blue Car Wash" class="car-image">
+    <section class="paul-about-hero">
+        <div class="paul-hero-overlay"></div>
+        <div class="paul-hero-content animate__animated animate__fadeInUp">
+            <h1 class="paul-hero-title">PRIVACY & POLICY</h1>
+            <div class="paul-hero-breadcrumb">
+                <a href="index.html">HOME</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>PRIVACY & POLICY</span>
             </div>
         </div>
+    </section>
 
-        <!-- City Banner / Ticker below hero -->
-        <div class="city-banner">
-            <div class="marquee-track">
-                <div class="city-list">
-                    <span>JAIPUR</span>
-                    <span>AHMEDABAD</span>
-                    <span>AURANGABAD</span>
-                    <span>BAHADURGARH</span>
-                    <span>GURUGRAM</span>
-                    <span>HYDERABAD</span>
-                    <span>JAIPUR</span>
-                    <span>DELHI</span>
-                    <span>MUMBAI</span>
-                    <span>PUNE</span>
+    <section class="paul-privacy-content">
+        <div class="paul-privacy-container animate__animated animate__fadeInUp">
+            <div class="sub-heading">
+                <span class="yellow-line"></span>
+                <span class="sub-text">LEGAL & PRIVACY</span>
+            </div>
+            <h2 class="privacy-title">Privacy Policy</h2>
+            <p class="privacy-last-updated">Last Updated: January 2024</p>
+
+            <div class="privacy-body">
+                <div class="privacy-block">
+                    <h3>1. Information We Collect</h3>
+                    <p>At <strong>The Car Wash</strong>, we collect personal details such as your full name, email address, phone number, vehicle details, and doorstep service location when you book an appointment or submit a contact request.</p>
                 </div>
-                <div class="city-list" aria-hidden="true">
-                    <span>JAIPUR</span>
-                    <span>AHMEDABAD</span>
-                    <span>AURANGABAD</span>
-                    <span>BAHADURGARH</span>
-                    <span>GURUGRAM</span>
-                    <span>HYDERABAD</span>
-                    <span>JAIPUR</span>
-                    <span>DELHI</span>
-                    <span>MUMBAI</span>
-                    <span>PUNE</span>
+
+                <div class="privacy-block">
+                    <h3>2. How We Use Your Information</h3>
+                    <p>We use the collected information exclusively to:</p>
+                    <ul>
+                        <li>Schedule and execute doorstep detailing services for your vehicle.</li>
+                        <li>Communicate booking confirmations, service updates, and customer support.</li>
+                        <li>Improve our cleaning techniques, service offerings, and website performance.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-block">
+                    <h3>3. Information Sharing & Protection</h3>
+                    <p>We strictly respect your privacy. We do not sell, rent, or trade your personal data to third parties. Your details are securely accessed only by authorized personnel to deliver your requested service.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h3>4. Service Location & Access</h3>
+                    <p>For doorstep services, we ensure our detailing team treats your vehicle and private property with utmost care, confidentiality, and security.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h3>5. Contact Us</h3>
+                    <p>If you have any questions or concerns regarding our Privacy Policy, please contact us at <strong>+91 94243 73556</strong> or visit our detailing center.</p>
                 </div>
             </div>
         </div>
@@ -156,231 +119,12 @@
 
 
 
-    <section class="car-wash-section">
-        <!-- Top steps indicator -->
-        <div class="wash-steps-wrapper animate__animated animate__fadeInUp">
-            <div class="wash-step active" data-step="0">
-                <span class="step-line"></span>
-                <span class="step-num">01</span>
-                <span class="step-name">Cleaning</span>
-            </div>
-            <div class="wash-step" data-step="1">
-                <span class="step-line"></span>
-                <span class="step-num">02</span>
-                <span class="step-name">Washing</span>
-            </div>
-            <div class="wash-step" data-step="2">
-                <span class="step-line"></span>
-                <span class="step-num">03</span>
-                <span class="step-name">Polishing</span>
-            </div>
-            <div class="wash-step" data-step="3">
-                <span class="step-line"></span>
-                <span class="step-num">04</span>
-                <span class="step-name">Coating</span>
-            </div>
-        </div>
 
-        <!-- Main content area: Left blue box & Right car-100 image -->
-        <div class="car-wash-container animate__animated animate__fadeInUp">
-            <!-- Left Blue Box -->
-            <div class="car-wash-left-box">
-                <div class="box-sub-heading">
-                    <span class="box-yellow-line"></span>
-                    <span class="box-sub-text" id="washSubText">The Car Wash</span>
-                </div>
 
-                <h2 class="box-title" id="washTitle">
-                    Car Washing Center<br>
-                    at your Door-Step!
-                </h2>
 
-                <ul class="box-features" id="washFeatures">
-                    <li>Most Affordable Price</li>
-                    <li>Authorised Products</li>
-                    <li>Free Air Freshener<br><span class="feature-sub">on every service.</span></li>
-                </ul>
 
-                <div class="box-action">
-                    <a href="#" class="btn-about-us">ABOUT US</a>
-                    <a href="#review" class="feedback-link">
-                        <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
-                        <div class="feedback-text">
-                            Check feedback<br>
-                            from satisfied customers
-                        </div>
-                    </a>
-                </div>
-            </div>
 
-            <!-- Right Image Box -->
-            <div class="car-wash-right-img">
-                <img src="assets/car-100.png" alt="100% Car Protection">
-                <div class="car-wash-overlay">
-                    <div class="car-svg-wrapper">
-                        <svg class="car-draw-svg" width="325" height="91" viewBox="0 0 325 91" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_4022_121)">
-                                <g clip-path="url(#clip1_4022_121)">
-                                    <g clip-path="url(#clip2_4022_121)">
-                                        <path class="car-path"
-                                            d="M277.296 80.3819C283.97 78.4729 288.631 72.286 288.631 65.3367V41.5944C288.631 35.7205 284.241 30.7413 278.419 30.0132L263.732 28.1751C257.433 27.3865 251.361 25.5459 245.683 22.7034L226.838 13.2692C218.645 9.16795 209.473 7 200.314 7H164.935C154.393 7 144.12 9.99525 135.225 15.6624C115.548 28.1999 92.5599 33.9658 69.6635 38.4537C61.555 40.0431 53.2784 42.3296 46.2043 45.6189C39.3984 48.7832 35.0005 55.7504 35 63.3677V76.5668C35 80.4067 36.12 83.7249 38.2382 86.1636"
-                                            stroke="url(#paint0_linear_4022_121)" stroke-width="13.349"
-                                            stroke-linecap="round" />
-                                    </g>
-                                </g>
-                            </g>
-                            <defs>
-                                <linearGradient id="paint0_linear_4022_121" x1="161.815" y1="7" x2="161.815"
-                                    y2="86.1636" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FACE0F" />
-                                    <stop offset="0.776042" stop-color="#FACE0F" />
-                                </linearGradient>
-                                <clipPath id="clip0_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                                <clipPath id="clip1_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                                <clipPath id="clip2_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </div>
-                    <div class="car-protection-counter">
-                        <span class="count-number" id="carProtectionCount">0</span><span class="count-percent">%</span>
-                    </div>
-                    <div class="car-protection-text">Car Protection</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Details Strength Feature Section -->
-    <section class="details-strength-section">
-        <div class="details-header animate__animated animate__fadeInUp">
-            <span class="sub-tag">THE CAR WASH</span>
-            <h2 class="section-heading">Our strength is that we focus<br>on the details</h2>
-            <p class="section-subtext">Our strength is in our attention to detail, providing a meticulous car wash
-                service right at your doorstep for ultimate convenience.</p>
-        </div>
-
-        <div class="details-content-grid animate__animated animate__fadeInUp">
-            <!-- Left Features (01 & 03) -->
-            <div class="features-column features-left">
-                <!-- Item 01: Cleaning -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-num">01</span>
-                        <span class="card-line"></span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon1.png" alt="Cleaning Icon">
-                    </div>
-                    <h3 class="card-title">Cleaning</h3>
-                    <p class="card-desc">Expert car cleaning, bringing shine and care to your vehicle.</p>
-                </div>
-
-                <!-- Item 03: Washing -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-num">03</span>
-                        <span class="card-line"></span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon3.png" alt="Washing Icon">
-                    </div>
-                    <h3 class="card-title">Washing</h3>
-                    <p class="card-desc">Professional car washing for a spotless, gleaming finish every time.</p>
-                </div>
-            </div>
-
-            <!-- Center Rotating Car Container -->
-            <div class="center-rotate-container">
-                <!-- Dual rings background behind car -->
-                <div class="green-rings-bg">
-                    <div class="ring outer-ring"></div>
-                    <div class="ring inner-ring"></div>
-                </div>
-                <!-- Seamless Rotating Car Image -->
-                <img src="assets/rotate-car.png" alt="Rotating Car Top View" class="rotating-car-img">
-            </div>
-
-            <!-- Right Features (02 & 04) -->
-            <div class="features-column features-right">
-                <!-- Item 02: Polishing -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-line"></span>
-                        <span class="card-num">02</span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon2.png" alt="Polishing Icon">
-                    </div>
-                    <h3 class="card-title">Polishing</h3>
-                    <p class="card-desc">High-quality car polishing for a smooth, shiny, and protected finish.</p>
-                </div>
-
-                <!-- Item 04: Coating -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-line"></span>
-                        <span class="card-num">04</span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon4.png" alt="Coating Icon">
-                    </div>
-                    <h3 class="card-title">Coating</h3>
-                    <p class="card-desc">Durable car coating that protects your vehicle's paint and enhances its shine.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Before & After Comparison Works Section -->
-    <section class="before-after-section">
-        <div class="before-after-container animate__animated animate__fadeInUp">
-            <!-- Left Info Box with bg image afbef-left.png -->
-            <div class="ba-left-box" style="background-image: url('assets/afbef-left.png');">
-                <div class="ba-sub-heading">
-                    <span class="ba-line"></span>
-                    <span class="ba-sub-text">THECARWASH</span>
-                </div>
-                <h2 class="ba-title">
-                    See what we
-                    can do for
-                    You
-                </h2>
-                <a href="our-work.html" class="btn-our-works">Our Works</a>
-            </div>
-
-            <!-- Right Interactive Slider Container -->
-            <div class="ba-slider-container" id="baSliderContainer">
-                <!-- After Image (Base / Full background) -->
-                <div class="ba-img-layer ba-after-layer">
-                    <img src="assets/after-seat1.jpg" alt="After Cleaning Seat">
-                </div>
-
-                <!-- Before Image (Clipped overlay) -->
-                <div class="ba-img-layer ba-before-layer" id="baBeforeLayer">
-                    <img src="assets/before-seat1.jpg" alt="Before Cleaning Seat">
-                </div>
-
-                <!-- Vertical Handle Line & Handle Button -->
-                <div class="ba-handle-line" id="baHandleLine">
-                    <div class="ba-handle-btn">
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                </div>
-
-                <!-- Hidden Range Input for seamless dragging/touching -->
-                <input type="range" min="0" max="100" value="50" class="ba-range-input" id="baRangeInput"
-                    aria-label="Before and after comparison slider">
-            </div>
-        </div>
-    </section>
     <!-- Testimonials & 5000 Stats Section -->
     <section id="review" class="reviews-stats-section">
         <!-- Big blurred background balls (ball-bg.png) -->
@@ -473,7 +217,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer Section -->
     <footer class="site-footer">
         <!-- Center Overlapping Bubble Image -->

@@ -5,12 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Car Wash</title>
-    <!-- FontAwesome 6 CDN for reliable icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Animate.css for motion effects -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
@@ -26,9 +23,9 @@
             </div>
 
             <ul class="nav-links">
-                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="services-prices.html">SERVICES & PRICING</a></li>
+                <li><a href="services-prices.html" class="active">SERVICES & PRICING</a></li>
                 <li><a href="our-work.html">WORKS</a></li>
                 <li><a href="contact-us.html">CONTACT</a></li>
             </ul>
@@ -43,8 +40,6 @@
             </button>
         </div>
     </nav>
-
-    <!-- Side Menu Overlay & Panel for Mobile/Tablet -->
     <div class="side-panel-overlay" id="sidePanelOverlay"></div>
     <div class="side-panel" id="sidePanel">
         <div class="side-panel-header">
@@ -56,9 +51,10 @@
             </button>
         </div>
         <ul class="side-panel-links">
-            <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> HOME</a></li>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> HOME</a></li>
             <li><a href="about.html"><i class="fa-solid fa-address-card"></i> ABOUT US</a></li>
-            <li><a href="services-prices.html"><i class="fa-solid fa-list-check"></i> SERVICES & PRICING</a></li>
+            <li><a href="services-prices.html" class="active"><i class="fa-solid fa-list-check"></i> SERVICES &
+                    PRICING</a></li>
             <li><a href="our-work.html"><i class="fa-solid fa-briefcase"></i> WORKS</a></li>
             <li><a href="contact-us.html"><i class="fa-solid fa-envelope"></i> CONTACT</a></li>
         </ul>
@@ -67,320 +63,253 @@
         </div>
     </div>
 
-    <section class="auto-hero-section">
-        <!-- Thin gradient outlined background text behind elements -->
-        <svg class="hero-bg-svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet">
-            <defs>
-                <linearGradient id="outlineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#facf0f17" stop-opacity="0.5" />
-                    <stop offset="100%" stop-color="#f3f7fcb6" stop-opacity="0.5" />
-                </linearGradient>
-            </defs>
-            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" class="hero-bg-svg-text">AUTO
-                CARE</text>
-        </svg>
+    <section class="paul-about-hero">
+        <div class="paul-hero-overlay"></div>
+        <div class="paul-hero-content animate__animated animate__fadeInUp">
+            <h1 class="paul-hero-title">SERVICES & PRICING</h1>
+            <div class="paul-hero-breadcrumb">
+                <a href="index.html">HOME</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>SERVICES & PRICING</span>
+            </div>
+        </div>
+    </section>
 
-        <div class="hero-container">
-            <div class="hero-content animate__animated animate__fadeInLeft">
-                <div class="sub-heading">
+    <section class="paul-service-pricing-content">
+        <div class="paul-sp-container">
+            <!-- 1. SERVICES SECTION -->
+            <div class="paul-services-block animate__animated animate__fadeInUp">
+                <div class="sub-heading sp-header-center">
                     <span class="yellow-line"></span>
-                    <span class="sub-text">The Car Wash</span>
+                    <span class="sub-text">OUR SERVICES</span>
                 </div>
-                <h1 class="main-title">
-                    Premium Door Step
-                    Car & Bike Care<br>
-                    <span class="highlight-wrapper">
-                        <span class="highlight-text" id="animatedHighlightText">GRAPHENE CERAMIC WASH</span>
-                        <span class="highlight-underline" id="animatedHighlightUnderline"></span>
-                    </span>
-                </h1>
-                <p class="starting-price">Services starting at <b>₹599</b></p>
-                <div class="hero-action">
-                    <a href="#" class="btn-book hero-btn">BOOK A SERVICE</a>
-                </div>
-            </div>
+                <h2 class="paul-sp-title">Comprehensive Car & Bike Detailing</h2>
+                <p class="paul-sp-subtitle">High-grade doorstep care powered by advanced tools and Graphene Ceramic
+                    technology</p>
 
-            <div class="hero-image-container animate__animated animate__fadeInRight">
-                <!-- Appointment Badge -->
-                <div class="appointment-card animate__animated animate__fadeInDown animate__delay-1s">
-                    <div class="appointment-info">
-                        <span class="title">Call and book an appointment</span>
-                        <span class="phone-number">+91 94243 73556</span>
-                        <span class="timing">Monday - Saturday: 8 am - 7 pm</span>
-                    </div>
-                    <div class="avatar">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-                            alt="Customer Support">
-                    </div>
-                </div>
-
-                <!-- Water Drops overlays -->
-                <img src="assets/drops.png" alt="Water Drops Left" class="drops-image drops-left">
-                <img src="assets/drops.png" alt="Water Drops Right" class="drops-image drops-right">
-
-                <!-- Car Image -->
-                <img src="assets/car-wash.png" alt="Blue Car Wash" class="car-image">
-            </div>
-        </div>
-
-        <!-- City Banner / Ticker below hero -->
-        <div class="city-banner">
-            <div class="marquee-track">
-                <div class="city-list">
-                    <span>JAIPUR</span>
-                    <span>AHMEDABAD</span>
-                    <span>AURANGABAD</span>
-                    <span>BAHADURGARH</span>
-                    <span>GURUGRAM</span>
-                    <span>HYDERABAD</span>
-                    <span>JAIPUR</span>
-                    <span>DELHI</span>
-                    <span>MUMBAI</span>
-                    <span>PUNE</span>
-                </div>
-                <div class="city-list" aria-hidden="true">
-                    <span>JAIPUR</span>
-                    <span>AHMEDABAD</span>
-                    <span>AURANGABAD</span>
-                    <span>BAHADURGARH</span>
-                    <span>GURUGRAM</span>
-                    <span>HYDERABAD</span>
-                    <span>JAIPUR</span>
-                    <span>DELHI</span>
-                    <span>MUMBAI</span>
-                    <span>PUNE</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="car-wash-section">
-        <!-- Top steps indicator -->
-        <div class="wash-steps-wrapper animate__animated animate__fadeInUp">
-            <div class="wash-step active" data-step="0">
-                <span class="step-line"></span>
-                <span class="step-num">01</span>
-                <span class="step-name">Cleaning</span>
-            </div>
-            <div class="wash-step" data-step="1">
-                <span class="step-line"></span>
-                <span class="step-num">02</span>
-                <span class="step-name">Washing</span>
-            </div>
-            <div class="wash-step" data-step="2">
-                <span class="step-line"></span>
-                <span class="step-num">03</span>
-                <span class="step-name">Polishing</span>
-            </div>
-            <div class="wash-step" data-step="3">
-                <span class="step-line"></span>
-                <span class="step-num">04</span>
-                <span class="step-name">Coating</span>
-            </div>
-        </div>
-
-        <!-- Main content area: Left blue box & Right car-100 image -->
-        <div class="car-wash-container animate__animated animate__fadeInUp">
-            <!-- Left Blue Box -->
-            <div class="car-wash-left-box">
-                <div class="box-sub-heading">
-                    <span class="box-yellow-line"></span>
-                    <span class="box-sub-text" id="washSubText">The Car Wash</span>
-                </div>
-
-                <h2 class="box-title" id="washTitle">
-                    Car Washing Center<br>
-                    at your Door-Step!
-                </h2>
-
-                <ul class="box-features" id="washFeatures">
-                    <li>Most Affordable Price</li>
-                    <li>Authorised Products</li>
-                    <li>Free Air Freshener<br><span class="feature-sub">on every service.</span></li>
-                </ul>
-
-                <div class="box-action">
-                    <a href="#" class="btn-about-us">ABOUT US</a>
-                    <a href="#review" class="feedback-link">
-                        <span class="arrow-circle"><i class="fa-solid fa-arrow-down"></i></span>
-                        <div class="feedback-text">
-                            Check feedback<br>
-                            from satisfied customers
+                <div class="paul-services-grid">
+                    <!-- Service 1 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service1.jpg" alt="Graphene Ceramic Wash">
                         </div>
-                    </a>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Graphene Ceramic Wash</h3>
+                            <p class="service-card-desc">Hydrophobic shield protection giving your car a high-gloss
+                                mirror finish and long-lasting paint defense.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service2.jpg" alt="High-Pressure Foam Wash">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">High-Pressure Foam Wash</h3>
+                            <p class="service-card-desc">Scratch-free pH neutral foam wash that deeply cleans dirt,
+                                grime, and road residue without harming paint.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service3.jpg" alt="Interior Steam Cleaning & Vacuum">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Interior Steam Cleaning & Vacuum</h3>
+                            <p class="service-card-desc">Deep interior vacuuming, dashboard conditioning, upholstery
+                                shampooing, and germ sanitization.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service4.jpg" alt="Machine Paint Polish & Wax">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Machine Paint Polish & Wax</h3>
+                            <p class="service-card-desc">Swirl mark removal and protective wax application to restore
+                                clear coat gloss and color depth.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service5.jpg" alt="Engine Bay Detailing">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Engine Bay Detailing</h3>
+                            <p class="service-card-desc">Safe degreasing, steam wash, and protective dressing for engine
+                                components and rubber hoses.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service6.jpg" alt="Headlight & Glass Restoration">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Headlight & Glass Restoration</h3>
+                            <p class="service-card-desc">Clears yellow oxidation on headlights and applies hydrophobic
+                                rain repellant coating on windshields.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service7.jpg" alt="Alloy Wheel & Tire Care">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Alloy Wheel & Tire Care</h3>
+                            <p class="service-card-desc">Deep brake dust removal from rims, tire de-greasing, and
+                                long-lasting high-black tire dressing shine.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="paul-service-card">
+                        <div class="service-img-wrapper">
+                            <img src="assets/service8.jpg" alt="Doorstep Bike Detailing">
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Doorstep Bike Detailing</h3>
+                            <p class="service-card-desc">Complete foam wash, chain degreasing, engine polish, and body
+                                wax for two-wheelers at your doorstep.</p>
+                            <a href="#" class="service-card-btn" data-open-modal="booking"><span>BOOK SERVICE</span> <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Image Box -->
-            <div class="car-wash-right-img">
-                <img src="assets/car-100.png" alt="100% Car Protection">
-                <div class="car-wash-overlay">
-                    <div class="car-svg-wrapper">
-                        <svg class="car-draw-svg" width="325" height="91" viewBox="0 0 325 91" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_4022_121)">
-                                <g clip-path="url(#clip1_4022_121)">
-                                    <g clip-path="url(#clip2_4022_121)">
-                                        <path class="car-path"
-                                            d="M277.296 80.3819C283.97 78.4729 288.631 72.286 288.631 65.3367V41.5944C288.631 35.7205 284.241 30.7413 278.419 30.0132L263.732 28.1751C257.433 27.3865 251.361 25.5459 245.683 22.7034L226.838 13.2692C218.645 9.16795 209.473 7 200.314 7H164.935C154.393 7 144.12 9.99525 135.225 15.6624C115.548 28.1999 92.5599 33.9658 69.6635 38.4537C61.555 40.0431 53.2784 42.3296 46.2043 45.6189C39.3984 48.7832 35.0005 55.7504 35 63.3677V76.5668C35 80.4067 36.12 83.7249 38.2382 86.1636"
-                                            stroke="url(#paint0_linear_4022_121)" stroke-width="13.349"
-                                            stroke-linecap="round" />
-                                    </g>
-                                </g>
-                            </g>
-                            <defs>
-                                <linearGradient id="paint0_linear_4022_121" x1="161.815" y1="7" x2="161.815"
-                                    y2="86.1636" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#FACE0F" />
-                                    <stop offset="0.776042" stop-color="#FACE0F" />
-                                </linearGradient>
-                                <clipPath id="clip0_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                                <clipPath id="clip1_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                                <clipPath id="clip2_4022_121">
-                                    <rect width="268" height="91" fill="white" transform="translate(28)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+            <!-- 2. OFFERS & PRICING CARDS SECTION -->
+            <div class="paul-pricing-block animate__animated animate__fadeInUp">
+                <div class="sub-heading sp-header-center">
+                    <span class="yellow-line"></span>
+                    <span class="sub-text">SPECIAL OFFERS & PACKAGES</span>
+                </div>
+                <h2 class="paul-sp-title">Doorstep Washing Subscription Plans</h2>
+                <p class="paul-sp-subtitle">Select the perfect subscription plan for your vehicle care routine</p>
+
+                <div class="paul-pricing-grid">
+                    <!-- Pricing Card 1: Monthly -->
+                    <div class="paul-pricing-card">
+                        <div class="pricing-badge-header">Monthly</div>
+                        <div class="pricing-card-body">
+                            <div class="pricing-amount-box">
+                                <div class="price-mrp"><span class="mrp-label">MRP</span> <span
+                                        class="mrp-cut">₹800</span></div>
+                                <div class="price-discount"><span class="currency">₹</span>750</div>
+                                <div class="price-save">Save ₹50</div>
+                            </div>
+                            <div class="pricing-feature-line">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>30 Days outer wiping with a solution</span>
+                            </div>
+                            <ul class="pricing-perks-list">
+                                <li><i class="fa-solid fa-check"></i> Eco-Friendly Solution Wipe</li>
+                                <li><i class="fa-solid fa-check"></i> Scratch-Free Microfiber Cloth</li>
+                                <li><i class="fa-solid fa-check"></i> Doorstep Convenience</li>
+                            </ul>
+                            <a href="#" class="btn-book pricing-choose-btn">CHOOSE PLAN</a>
+                        </div>
                     </div>
-                    <div class="car-protection-counter">
-                        <span class="count-number" id="carProtectionCount">0</span><span class="count-percent">%</span>
+
+                    <!-- Pricing Card 2: Quarterly (Popular) -->
+                    <div class="paul-pricing-card featured-plan">
+                        <div class="popular-ribbon">POPULAR</div>
+                        <div class="pricing-badge-header">Quarterly</div>
+                        <div class="pricing-card-body">
+                            <div class="pricing-amount-box">
+                                <div class="price-mrp"><span class="mrp-label">MRP</span> <span
+                                        class="mrp-cut">₹2400</span></div>
+                                <div class="price-discount"><span class="currency">₹</span>2100</div>
+                                <div class="price-save">Save ₹300</div>
+                            </div>
+                            <div class="pricing-feature-line">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>90 Days outer wiping with a solution</span>
+                            </div>
+                            <ul class="pricing-perks-list">
+                                <li><i class="fa-solid fa-check"></i> Eco-Friendly Solution Wipe</li>
+                                <li><i class="fa-solid fa-check"></i> Scratch-Free Microfiber Cloth</li>
+                                <li><i class="fa-solid fa-check"></i> 1 Free Foam Wash Included</li>
+                            </ul>
+                            <a href="#" class="btn-book pricing-choose-btn">CHOOSE PLAN</a>
+                        </div>
                     </div>
-                    <div class="car-protection-text">Car Protection</div>
+
+                    <!-- Pricing Card 3: Half-Yearly -->
+                    <div class="paul-pricing-card">
+                        <div class="pricing-badge-header">Half-Yearly</div>
+                        <div class="pricing-card-body">
+                            <div class="pricing-amount-box">
+                                <div class="price-mrp"><span class="mrp-label">MRP</span> <span
+                                        class="mrp-cut">₹4800</span></div>
+                                <div class="price-discount"><span class="currency">₹</span>4050</div>
+                                <div class="price-save">Save ₹750</div>
+                            </div>
+                            <div class="pricing-feature-line">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>180 Days outer wiping with a solution</span>
+                            </div>
+                            <ul class="pricing-perks-list">
+                                <li><i class="fa-solid fa-check"></i> Eco-Friendly Solution Wipe</li>
+                                <li><i class="fa-solid fa-check"></i> Scratch-Free Microfiber Cloth</li>
+                                <li><i class="fa-solid fa-check"></i> 2 Free Foam Washes Included</li>
+                            </ul>
+                            <a href="#" class="btn-book pricing-choose-btn">CHOOSE PLAN</a>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Card 4: Yearly (Best Value) -->
+                    <div class="paul-pricing-card best-value-plan">
+                        <div class="popular-ribbon best-ribbon">BEST VALUE</div>
+                        <div class="pricing-badge-header">Yearly</div>
+                        <div class="pricing-card-body">
+                            <div class="pricing-amount-box">
+                                <div class="price-mrp"><span class="mrp-label">MRP</span> <span
+                                        class="mrp-cut">₹9600</span></div>
+                                <div class="price-discount"><span class="currency">₹</span>8000</div>
+                                <div class="price-save">Save ₹1600</div>
+                            </div>
+                            <div class="pricing-feature-line">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>365 Days outer wiping with a solution</span>
+                            </div>
+                            <ul class="pricing-perks-list">
+                                <li><i class="fa-solid fa-check"></i> Eco-Friendly Solution Wipe</li>
+                                <li><i class="fa-solid fa-check"></i> Scratch-Free Microfiber Cloth</li>
+                                <li><i class="fa-solid fa-check"></i> 4 Free Foam Washes + Tire Shine</li>
+                            </ul>
+                            <a href="#" class="btn-book pricing-choose-btn">CHOOSE PLAN</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Details Strength Feature Section -->
-    <section class="details-strength-section">
-        <div class="details-header animate__animated animate__fadeInUp">
-            <span class="sub-tag">THE CAR WASH</span>
-            <h2 class="section-heading">Our strength is that we focus<br>on the details</h2>
-            <p class="section-subtext">Our strength is in our attention to detail, providing a meticulous car wash
-                service right at your doorstep for ultimate convenience.</p>
-        </div>
-
-        <div class="details-content-grid animate__animated animate__fadeInUp">
-            <!-- Left Features (01 & 03) -->
-            <div class="features-column features-left">
-                <!-- Item 01: Cleaning -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-num">01</span>
-                        <span class="card-line"></span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon1.png" alt="Cleaning Icon">
-                    </div>
-                    <h3 class="card-title">Cleaning</h3>
-                    <p class="card-desc">Expert car cleaning, bringing shine and care to your vehicle.</p>
-                </div>
-
-                <!-- Item 03: Washing -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-num">03</span>
-                        <span class="card-line"></span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon3.png" alt="Washing Icon">
-                    </div>
-                    <h3 class="card-title">Washing</h3>
-                    <p class="card-desc">Professional car washing for a spotless, gleaming finish every time.</p>
-                </div>
-            </div>
-
-            <!-- Center Rotating Car Container -->
-            <div class="center-rotate-container">
-                <!-- Dual rings background behind car -->
-                <div class="green-rings-bg">
-                    <div class="ring outer-ring"></div>
-                    <div class="ring inner-ring"></div>
-                </div>
-                <!-- Seamless Rotating Car Image -->
-                <img src="assets/rotate-car.png" alt="Rotating Car Top View" class="rotating-car-img">
-            </div>
-
-            <!-- Right Features (02 & 04) -->
-            <div class="features-column features-right">
-                <!-- Item 02: Polishing -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-line"></span>
-                        <span class="card-num">02</span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon2.png" alt="Polishing Icon">
-                    </div>
-                    <h3 class="card-title">Polishing</h3>
-                    <p class="card-desc">High-quality car polishing for a smooth, shiny, and protected finish.</p>
-                </div>
-
-                <!-- Item 04: Coating -->
-                <div class="detail-card">
-                    <div class="card-num-bar">
-                        <span class="card-line"></span>
-                        <span class="card-num">04</span>
-                    </div>
-                    <div class="icon-box">
-                        <img src="assets/icon4.png" alt="Coating Icon">
-                    </div>
-                    <h3 class="card-title">Coating</h3>
-                    <p class="card-desc">Durable car coating that protects your vehicle's paint and enhances its shine.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Before & After Comparison Works Section -->
-    <section class="before-after-section">
-        <div class="before-after-container animate__animated animate__fadeInUp">
-            <!-- Left Info Box with bg image afbef-left.png -->
-            <div class="ba-left-box" style="background-image: url('assets/afbef-left.png');">
-                <div class="ba-sub-heading">
-                    <span class="ba-line"></span>
-                    <span class="ba-sub-text">THECARWASH</span>
-                </div>
-                <h2 class="ba-title">
-                    See what we
-                    can do for
-                    You
-                </h2>
-                <a href="our-work.html" class="btn-our-works">Our Works</a>
-            </div>
-
-            <!-- Right Interactive Slider Container -->
-            <div class="ba-slider-container" id="baSliderContainer">
-                <!-- After Image (Base / Full background) -->
-                <div class="ba-img-layer ba-after-layer">
-                    <img src="assets/after-seat1.jpg" alt="After Cleaning Seat">
-                </div>
-
-                <!-- Before Image (Clipped overlay) -->
-                <div class="ba-img-layer ba-before-layer" id="baBeforeLayer">
-                    <img src="assets/before-seat1.jpg" alt="Before Cleaning Seat">
-                </div>
-
-                <!-- Vertical Handle Line & Handle Button -->
-                <div class="ba-handle-line" id="baHandleLine">
-                    <div class="ba-handle-btn">
-                        <i class="fa-solid fa-chevron-left"></i>
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                </div>
-
-                <!-- Hidden Range Input for seamless dragging/touching -->
-                <input type="range" min="0" max="100" value="50" class="ba-range-input" id="baRangeInput"
-                    aria-label="Before and after comparison slider">
-            </div>
-        </div>
-    </section>
     <!-- Testimonials & 5000 Stats Section -->
     <section id="review" class="reviews-stats-section">
         <!-- Big blurred background balls (ball-bg.png) -->
@@ -473,7 +402,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer Section -->
     <footer class="site-footer">
         <!-- Center Overlapping Bubble Image -->

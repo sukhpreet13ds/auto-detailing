@@ -385,4 +385,134 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Work Gallery Popout Lightbox Logic
+    const workGridItems = document.querySelectorAll('.work-grid-item');
+    const workLightbox = document.getElementById('workLightbox');
+    const workLightboxOverlay = document.getElementById('workLightboxOverlay');
+    const workLightboxImg = document.getElementById('workLightboxImg');
+    const workLightboxClose = document.getElementById('workLightboxClose');
+
+    if (workGridItems.length > 0 && workLightbox && workLightboxImg) {
+        function openWorkLightbox(src) {
+            workLightboxImg.src = src;
+            workLightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWorkLightbox() {
+            workLightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (!workLightbox.classList.contains('active')) {
+                    workLightboxImg.src = '';
+                }
+            }, 300);
+        }
+
+        workGridItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src') || item.querySelector('img')?.src;
+                if (src) {
+                    openWorkLightbox(src);
+                }
+            });
+        });
+
+        // Close on clicking cross icon
+        if (workLightboxClose) {
+            workLightboxClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeWorkLightbox();
+            });
+        }
+
+        // Close on clicking overlay background
+        if (workLightboxOverlay) {
+            workLightboxOverlay.addEventListener('click', closeWorkLightbox);
+        }
+
+        // Close on clicking anywhere outside image container
+        workLightbox.addEventListener('click', (e) => {
+            if (e.target === workLightbox) {
+                closeWorkLightbox();
+            }
+        });
+
+        // Close on pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && workLightbox.classList.contains('active')) {
+                closeWorkLightbox();
+            }
+        });
+    }
+
+    // Global Reusable Booking Modal Trigger Logic
+    const bookingModal = document.getElementById('bookingModal');
+    const bookingModalOverlay = document.getElementById('bookingModalOverlay');
+    const bookingModalClose = document.getElementById('bookingModalClose');
+    const bookingModalForm = document.getElementById('bookingModalForm');
+    
+    // Select all buttons that trigger the booking modal
+    const bookingTriggers = document.querySelectorAll('.btn-book, .open-booking-modal, [data-open-modal="booking"]');
+
+    function openBookingModal() {
+        if (bookingModal) {
+            bookingModal.classList.add('open');
+            bookingModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeBookingModal() {
+        if (bookingModal) {
+            bookingModal.classList.remove('open');
+            bookingModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+    }
+
+    bookingTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBookingModal();
+        });
+    });
+
+    if (bookingModalClose) {
+        bookingModalClose.addEventListener('click', closeBookingModal);
+    }
+
+    if (bookingModalOverlay) {
+        bookingModalOverlay.addEventListener('click', closeBookingModal);
+    }
+
+    if (bookingModal) {
+        bookingModal.addEventListener('click', (e) => {
+            if (e.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && bookingModal && bookingModal.classList.contains('open')) {
+            closeBookingModal();
+        }
+    });
+
+    if (bookingModalForm) {
+        bookingModalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('modalFullName')?.value || '';
+            const service = document.getElementById('modalServiceSelect')?.value || 'service';
+            
+            alert(`Thank you, ${name}! Your booking request for "${service}" has been received. We will contact you shortly.`);
+            bookingModalForm.reset();
+            closeBookingModal();
+        });
+    }
 });
+
+
+
