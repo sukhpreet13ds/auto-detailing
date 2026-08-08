@@ -108,6 +108,25 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(255, 204, 0, 0.4);
 }
+.btn-book1 {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #000;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-book1:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 204, 0, 0.4);
+}
 
 .hamburger-btn {
     display: none;
@@ -3819,5 +3838,180 @@ nav {
 
     .privacy-block h3 {
         font-size: 18px;
+    }
+}
+
+/* 404 & Thank You Pages Styling */
+.paul-404-content,
+.paul-thankyou-content {
+    padding: 90px 20px;
+    background-color: #f6f7ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.paul-404-container,
+.paul-thankyou-container {
+    max-width: 650px;
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paul-404-badge {
+    display: inline-block;
+    font-size: 80px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #111 0%, #333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.paul-404-badge::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+.paul-404-title,
+.paul-thankyou-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #111111;
+    margin-top: 8px;
+    margin-bottom: 14px;
+}
+
+.paul-404-desc,
+.paul-thankyou-desc {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.paul-404-actions,
+.paul-thankyou-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-404-secondary,
+.btn-thankyou-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #1f2937;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-404-secondary:hover,
+.btn-thankyou-secondary:hover {
+    background-color: #000000;
+    color: var(--primary);
+}
+
+/* SVG Tick Animation */
+.svg-tick-wrapper {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+}
+
+.animated-tick {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 3.5;
+    stroke: #10B981;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #10B981;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.tick-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 3.5;
+    stroke-miterlimit: 10;
+    stroke: #10B981;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.tick-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke: #10B981;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.6s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 45px rgba(16, 185, 129, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .paul-404-content,
+    .paul-thankyou-content {
+        padding: 60px 16px;
+    }
+
+    .paul-404-container,
+    .paul-thankyou-container {
+        padding: 40px 20px;
+    }
+
+    .paul-404-badge {
+        font-size: 60px;
+    }
+
+    .paul-404-title,
+    .paul-thankyou-title {
+        font-size: 28px;
     }
 }
